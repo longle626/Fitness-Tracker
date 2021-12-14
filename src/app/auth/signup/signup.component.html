@@ -2,6 +2,7 @@
   <form
     fxLayout="column"
     fxLayoutAlign="center center"
+    fxLayoutGap="10px"
     #f="ngForm"
     (ngSubmit)="onSubmit(f)"
   >
@@ -14,7 +15,14 @@
         placeholder="Your Email"
         email
         required
+        #emailInput="ngModel"
       />
+      <mat-error *ngIf="emailInput.hasError('required')"
+        >Field must not be empty.</mat-error
+      >
+      <mat-error *ngIf="!emailInput.hasError('required')"
+        >E-Mail is invalid.</mat-error
+      >
     </mat-form-field>
     <mat-form-field>
       <input
@@ -26,8 +34,32 @@
         required
         minlength="6"
       />
-      <mat-hint>Should be at least 6 character long.</mat-hint>
+      <mat-error>Has to be at least 6 charaters long.</mat-error>
     </mat-form-field>
-    <button type="submit" mat-raised-button color="primary">Submit</button>
+    <mat-form-field>
+      <input
+        ngModel
+        name="birthday"
+        required
+        matInput
+        placeholder="Your birthday"
+        [matDatepicker]="picker"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-checkbox ngModel name="agree" required color="primary"
+      >Agree to Term and Conditions.</mat-checkbox
+    >
+
+    <button
+      type="submit"
+      [disabled]="f.invalid"
+      mat-raised-button
+      color="primary"
+    >
+      Submit
+    </button>
   </form>
 </section>
