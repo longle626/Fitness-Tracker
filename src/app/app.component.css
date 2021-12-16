@@ -7,19 +7,3 @@ mat-sidenav {
 mat-sidenav {
   width: 250px;
 }
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-a:hover,
-a:active {
-  color: grey;
-}
-
-.navigation {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
