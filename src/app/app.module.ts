@@ -29,6 +29,7 @@ import { confirmationModalComponent } from './training/current-training/confirma
     WelcomeComponent,
     HeaderComponent,
     SidenavListComponent,
+    confirmationModalComponent,
   ],
   imports: [
     BrowserModule,
