@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { confirmationModalComponent } from './training/current-training/confirmation-modal.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { confirmationModalComponent } from './training/current-training/confirma
     FlexLayoutModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
   entryComponents: [confirmationModalComponent],
 })
