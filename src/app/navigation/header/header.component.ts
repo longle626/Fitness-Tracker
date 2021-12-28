@@ -32,6 +32,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.toggleNav.emit();
   }
 
+  logout() {
+    this.authService.logout();
+  }
+
   ngOnDestroy(): void {
     this.authSubscription.unsubscribe();
   }
