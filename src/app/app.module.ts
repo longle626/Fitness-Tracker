@@ -17,7 +17,7 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { confirmationModalComponent } from './training/current-training/confirmation-modal.component';
 import { AuthService } from './auth/auth.service';
-
+import { TrainingService } from './training/training.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +40,7 @@ import { AuthService } from './auth/auth.service';
     FlexLayoutModule,
     FormsModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, TrainingService],
   bootstrap: [AppComponent],
   entryComponents: [confirmationModalComponent],
 })
