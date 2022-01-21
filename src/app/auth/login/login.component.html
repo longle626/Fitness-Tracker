@@ -38,6 +38,7 @@
     </mat-form-field>
 
     <button
+      *ngIf="!loadingIcon"
       type="submit"
       [disabled]="f.invalid"
       mat-raised-button
@@ -45,5 +46,6 @@
     >
       Login
     </button>
+    <mat-spinner *ngIf="loadingIcon"></mat-spinner>
   </form>
 </section>
