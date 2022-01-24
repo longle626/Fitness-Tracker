@@ -10,7 +10,7 @@ import { confirmationModalComponent } from './confirmation-modal.component';
 })
 export class CurrentTrainingComponent implements OnInit {
   progress = 0;
-  timer!: number;
+  timer: any;
 
   constructor(
     public dialog: MatDialog,
